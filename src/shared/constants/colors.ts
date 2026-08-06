@@ -1,4 +1,5 @@
 export const LightColors = {
+  white: '#FFFFFF',
   primary: '#1063FD',
   muted: '#3A5A92',
   background: '#EFEEF6',
