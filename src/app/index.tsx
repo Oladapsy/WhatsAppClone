@@ -18,16 +18,22 @@ export default function Index() {
           Family, friends, and other people who use our services may have
           uploaded your number to WhatsApp. If so, they can see you in their
           contacts after you sign up.{" "}
-          <Typography color={Colors.light.primary}>Learn more</Typography>
+          <Typography color={Colors.light.primary} onPress={() => console.log("Learn more pressed")}>
+            Learn more
+          </Typography>
         </Typography>
       </View>
 
       <View style={styles.subtitle}>
         <Typography variant="subtitle" align="center">
           Read our{" "}
-          <Typography color={Colors.light.primary}>Privacy Policy</Typography>.
-          Tap "Agree and continue" to accept the{" "}
-          <Typography color={Colors.light.primary}>Terms of Service</Typography>
+          <Typography color={Colors.light.primary} onPress={() => console.log("Privacy Policy pressed")}>
+            Privacy Policy
+          </Typography>
+          . Tap "Agree and continue" to accept the{" "}
+          <Typography color={Colors.light.primary} onPress={() => console.log("Terms of Service pressed")}>
+            Terms of Service
+          </Typography>
           .
         </Typography>
       </View>
@@ -37,6 +43,7 @@ export default function Index() {
         variant="text"
         typoVariant="subtitle"
         style={{ marginBottom: 20 }}
+        onPress={() => console.log("Agree and continue pressed")}
       />
 
       {/* Meta Footer */}
