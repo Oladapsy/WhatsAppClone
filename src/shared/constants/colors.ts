@@ -7,6 +7,7 @@ export const LightColors = {
   gray: '#6E6E73',
   lightGray: '#DCDCE2',
   green: '#4FEE57',
+  meta: '#00A884',
   lightGreen: '#DBFFCB',
   red: '#EF0827',
   yellow: '#FCC70B',

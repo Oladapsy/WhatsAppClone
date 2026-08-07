@@ -1,8 +1,7 @@
 import { View, StyleSheet, Image } from "react-native";
-import { LightColors } from "@/shared/constants/colors";
+import { Colors } from "@/shared/constants/colors";
 import Title, { Typography } from "@/shared/components/Typography";
 
-// React Native handles static assets directly without resolveAssetSource
 export default function Index() {
   return (
     <View style={styles.container}>
@@ -23,6 +22,22 @@ export default function Index() {
           Text
         </Typography>
       </View>
+
+      {/* Meta Footer */}
+      <View style={styles.footer}>
+        
+        <Typography variant="small" secondary align="center">
+          from
+        </Typography>
+        <Typography
+          variant="subtitle"
+          weight="bold"
+          color={Colors.light.meta}
+          align="center"
+        >
+          Meta
+        </Typography>
+      </View>
     </View>
   );
 }
@@ -33,11 +48,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
-    backgroundColor: LightColors.white,
+    backgroundColor: Colors.light.white,
   },
   welcome: {
     width: "100%",
     height: 300,
     marginBottom: 80,
+  },
+  footer: {
+    alignItems: "center",
   },
 });
