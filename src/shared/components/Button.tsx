@@ -7,7 +7,7 @@ import {
   useColorScheme,
 } from 'react-native';
 import { Colors } from '@/shared/constants/colors';
-import { Typography, TypographyWeight } from '@/shared/components/Typography';
+import { Typography, TypographyWeight, TypographyVariant} from '@/shared/components/Typography';
 
 export type ButtonVariant = 'filled' | 'text' | 'outline';
 
@@ -17,6 +17,7 @@ export interface ButtonProps extends TouchableOpacityProps {
   weight?: TypographyWeight;
   loading?: boolean;
   disabled?: boolean;
+  typoVariant?: TypographyVariant;
 }
 
 export function Button({
@@ -26,6 +27,7 @@ export function Button({
   loading = false,
   disabled = false,
   style,
+  typoVariant = 'title',
   onPress,
   ...props
 }: ButtonProps) {
@@ -63,7 +65,7 @@ export function Button({
         <ActivityIndicator color={textColor} />
       ) : (
         <Typography
-          variant="title"
+          variant={typoVariant}
           weight={weight}
           color={textColor}
           align="center"

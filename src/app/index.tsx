@@ -12,22 +12,32 @@ export default function Index() {
       />
 
       <Title> Welcome to WhatsApp</Title>
-      <View>
-        <Typography variant="subtitle">
+
+      <View style={styles.subtitle}>
+        <Typography variant="subtitle" align="center">
           Family, friends, and other people who use our services may have
           uploaded your number to WhatsApp. If so, they can see you in their
-          contacts after you sign up. <Typography>Learn more</Typography>
+          contacts after you sign up.{" "}
+          <Typography color={Colors.light.primary}>Learn more</Typography>
         </Typography>
       </View>
 
-      <View>
-        <Typography variant="subtitle">
-          Read our <Typography>Privacy Policy</Typography>. Tap "Agree and
-          continue" to accept the <Typography>Terms of Service</Typography>.
+      <View style={styles.subtitle}>
+        <Typography variant="subtitle" align="center">
+          Read our{" "}
+          <Typography color={Colors.light.primary}>Privacy Policy</Typography>.
+          Tap "Agree and continue" to accept the{" "}
+          <Typography color={Colors.light.primary}>Terms of Service</Typography>
+          .
         </Typography>
       </View>
 
-      <Button title="Agree and continue" variant="text" />
+      <Button
+        title="Agree and continue"
+        variant="text"
+        typoVariant="subtitle"
+        style={{ marginBottom: 20 }}
+      />
 
       {/* Meta Footer */}
       <View style={styles.footer}>
@@ -35,11 +45,11 @@ export default function Index() {
           from
         </Typography>
         <View style={styles.logo}>
-          <MetaLogo width={100} height={25} color={Colors.light.meta} />
+          <MetaLogo width={22} height={22} color={Colors.light.green} />
           <Typography
             variant="subtitle"
             weight="bold"
-            color={Colors.light.meta}
+            color={Colors.light.green}
             align="left"
           >
             Meta
@@ -68,5 +78,11 @@ const styles = StyleSheet.create({
   },
   logo: {
     flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+  },
+  subtitle: {
+    marginBottom: 22,
+    marginTop: 10,
   },
 });
