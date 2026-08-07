@@ -2,7 +2,7 @@ export const LightColors = {
   white: '#FFFFFF',
   primary: '#1063FD',
   muted: '#3A5A92',
-  background: '#EFEEF6',
+  background: '#FFFFFF',
   text: '#1C1C1E',
   gray: '#6E6E73',
   lightGray: '#DCDCE2',

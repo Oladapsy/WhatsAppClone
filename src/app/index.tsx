@@ -1,11 +1,16 @@
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Image, useColorScheme } from "react-native";
 import { Colors } from "@/shared/constants/colors";
 import Title, { Typography } from "@/shared/components/Typography";
 import MetaLogo from "@/assets/icons/logo/meta.svg";
 import { Button } from "@/shared/components/Button";
+
 export default function Index() {
+  const scheme = useColorScheme();
+  const colorScheme = scheme === "dark" ? "dark" : "light";
+  const themeColors = Colors[colorScheme];
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: themeColors.background }]}>
       <Image
         source={require("@/assets/images/home/welcome.png")}
         style={styles.welcome}
@@ -18,7 +23,10 @@ export default function Index() {
           Family, friends, and other people who use our services may have
           uploaded your number to WhatsApp. If so, they can see you in their
           contacts after you sign up.{" "}
-          <Typography color={Colors.light.primary} onPress={() => console.log("Learn more pressed")}>
+          <Typography
+            color={themeColors.primary}
+            onPress={() => console.log("Learn more pressed")}
+          >
             Learn more
           </Typography>
         </Typography>
@@ -27,11 +35,17 @@ export default function Index() {
       <View style={styles.subtitle}>
         <Typography variant="subtitle" align="center">
           Read our{" "}
-          <Typography color={Colors.light.primary} onPress={() => console.log("Privacy Policy pressed")}>
+          <Typography
+            color={themeColors.primary}
+            onPress={() => console.log("Privacy Policy pressed")}
+          >
             Privacy Policy
           </Typography>
           . Tap "Agree and continue" to accept the{" "}
-          <Typography color={Colors.light.primary} onPress={() => console.log("Terms of Service pressed")}>
+          <Typography
+            color={themeColors.primary}
+            onPress={() => console.log("Terms of Service pressed")}
+          >
             Terms of Service
           </Typography>
           .
@@ -52,11 +66,11 @@ export default function Index() {
           from
         </Typography>
         <View style={styles.logo}>
-          <MetaLogo width={22} height={22} color={Colors.light.green} />
+          <MetaLogo width={22} height={22} color={themeColors.green} />
           <Typography
             variant="subtitle"
             weight="bold"
-            color={Colors.light.green}
+            color={themeColors.green}
             align="left"
           >
             Meta
@@ -73,7 +87,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
-    backgroundColor: Colors.light.white,
   },
   welcome: {
     width: "100%",
