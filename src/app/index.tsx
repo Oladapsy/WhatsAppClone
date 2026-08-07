@@ -1,17 +1,28 @@
-import { Text, View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import { LightColors } from "@/shared/constants/colors";
+import Title, { Typography } from "@/shared/components/Typography";
 
 // React Native handles static assets directly without resolveAssetSource
 export default function Index() {
   return (
     <View style={styles.container}>
-      {/* Pass the imported asset directly to the source prop */}
       <Image
         source={require("@/assets/images/home/welcome.png")}
         style={styles.welcome}
       />
 
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
+      <Title> Welcome to WhatsApp Clone</Title>
+      <View>
+        <Typography variant="subtitle" weight="medium" secondary>
+          Text
+        </Typography>
+      </View>
+
+      <View>
+        <Typography variant="subtitle" weight="medium" secondary>
+          Text
+        </Typography>
+      </View>
     </View>
   );
 }

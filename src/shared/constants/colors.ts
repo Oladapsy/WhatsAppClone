@@ -13,6 +13,7 @@ export const LightColors = {
 };
 
 export const DarkColors = {
+  white: '#FFFFFF',
   primary: '#1063FD',
   muted: '#8A9FBF',
   background: '#121212',
@@ -24,3 +25,10 @@ export const DarkColors = {
   red: '#FF453A',
   yellow: '#FFD60A',
 };
+
+export const Colors = {
+  light: LightColors,
+  dark: DarkColors,
+} as const;
+
+export type ThemeColors = typeof LightColors;
